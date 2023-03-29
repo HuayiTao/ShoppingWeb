@@ -17,26 +17,23 @@
 export default {
   data() {
     return {
-      model: { manufacturer: { name: "", _id: "" } }
+      username: '',
+      password: '',
     };
   },
-  mounted() {
-    const userPoolId = "";
-    const form = new Guard(userPoolId, {
-      title: "Shopping",
-      mountId: "login-form",
-      hideClose: true
-    });
-
-    const that = this;
-
-    form.on("authenticated", userInfo => {
-      that.$store.commit("SET_USER", userInfo);
-      localStorage.setItem("token", JSON.stringify(userInfo.token));
-      localStorage.setItem("userInfo", JSON.stringify(userInfo));
-
-      that.$router.push("/");
-    });
-  }
+  methods: {
+    async login() {
+      try {
+        const response = await axios.post('/api/users/login', {
+          username: this.username,
+          password: this.password,
+        });
+        console.log(response.data);
+        // Save the user's information and redirect to the desired page
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  },
 };
 </script>

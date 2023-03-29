@@ -50,7 +50,7 @@
         <router-link to="/user/login" tag="div">
           <el-button>Login</el-button>
         </router-link>
-        <router-link to="/user/login" tag="div">
+        <router-link to="/user/sign" tag="div">
           <el-button type="primary">Sign up</el-button>
         </router-link>
       </div>

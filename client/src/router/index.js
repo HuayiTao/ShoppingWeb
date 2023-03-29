@@ -83,11 +83,11 @@ const router = new Router({
           name: "Login",
           component: Login
         },
-        {
-          path: "settings",
-          name: "Settings",
-          component: Setting
-        }
+        // {
+        //   path: "settings",
+        //   name: "Settings",
+        //   component: Setting
+        // }
       ]
     }
   ]

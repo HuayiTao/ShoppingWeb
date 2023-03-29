@@ -19,7 +19,16 @@ const manufacturerSchema = Schema({
   user: String,
 });
 
+const userSchema = Schema({
+  id: ObjectId,
+  name: String,
+  password: String,
+});
+
+
 const Product = model("Product", productSchema);
 const Manufacturer = model("Manufacturer", manufacturerSchema);
+const User = model("User", userSchema);
 
-module.exports = { Product, Manufacturer };
+
+module.exports = { Product, Manufacturer, User };
